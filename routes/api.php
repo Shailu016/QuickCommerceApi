@@ -25,12 +25,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-    Route::get('/products', [ProductController::class, 'index']);
-    Route::post('/products', [ProductController::class, 'store']);
-    Route::get('/products/{product}', [ProductController::class, 'show']);
-    Route::delete('/products/{product}', [ProductController::class, 'destroy']);
-    Route::get('/products/list/{category}', [ProductController::class, 'productByCategory']);
-    Route::post('/products/update/{product}', [ProductController::class, 'update']);
+Route::get('/products', [ProductController::class, 'index']);
+Route::post('/product', [ProductController::class, 'store']);
+Route::get('/products/{product}', [ProductController::class, 'show']);
+Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+Route::get('/products/list/{category}', [ProductController::class, 'productByCategory']);
+Route::post('/products/update/{product}', [ProductController::class, 'update']);
 
 
 Route::prefix('category')->group(function () {

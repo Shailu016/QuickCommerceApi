@@ -29,7 +29,7 @@ class ProductController extends Controller
         try {
             $validated  = $request->validate([
                 'name'          =>    'required|string|max:255',
-                'description'   =>    'nullable|string|max:255',
+                'description'   =>    'nullable|string',
                 'image'         =>    'nullable',
                 'category_id'   =>    'nullable|integer',
                 'price'         =>    'required|numeric',
@@ -42,6 +42,7 @@ class ProductController extends Controller
            
     
             $product = Product::create($validated);
+           
             
             return $this->success('Product created successfully', $product);
         } catch (\Throwable $th) {
